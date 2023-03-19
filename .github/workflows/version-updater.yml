@@ -18,7 +18,7 @@ jobs:
     - name: Generate file
       uses: actions/checkout@v3
     - run: |
-        helmfile template --file helmfile/cert-manager/helmfile.yaml > helmfile/cert-manager/cert-manager.yaml
+        helmfile template --file helmfile/helmfile.yaml > helmfile/cert-manager/cert-manager.yaml
         git config user.name github-actions
         git config user.email github-actions@github.com
         git add .
