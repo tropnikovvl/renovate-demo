@@ -1,0 +1,8 @@
+global:
+  leaderElection:
+    namespace: "cert-manager"
+
+installCRDs: true
+
+startupapicheck:
+  timeout: 5m
