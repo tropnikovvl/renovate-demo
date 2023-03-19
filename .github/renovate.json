@@ -1,5 +1,0 @@
-{
-  "helmfile": {
-    "fileMatch": ["(^|/)helmfile.yaml$"]
-  }
-}
