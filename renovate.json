@@ -1,29 +1,21 @@
 {
+  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
   "extends": [
     "config:base"
   ],
+  "dependencyDashboard": true,
+  "branchConcurrentLimit": 0,
+  "prHourlyLimit": 0,
+  "prConcurrentLimit": 0,
+  "enabledManagers": [
+    "helmfile"
+  ],
+  "labels": ["renovate"],
   "packageRules": [
     {
-      "matchPackageNames": [
-        "stable/*",
-        "bitnami/*"
-      ],
-      "updateTypes": [
-        "minor",
-        "patch"
-      ],
-      "depTypeList": [
-        "helmfile"
-      ]
-    }
-  ],
-  "platforms": [
-    {
-      "platform": "github",
-      "baseUrl": "https://api.github.com",
-      "env": {
-        "GITHUB_TOKEN": "${secrets.GH_TOKEN}"
-      }
+      "managers": ["helmfile"],
+      "additionalBranchPrefix": "{{baseDir}}-",
+      "commitMessageSuffix": ": {{baseDir}}"
     }
   ]
 }
