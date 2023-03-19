@@ -11,16 +11,25 @@ jobs:
   update-version:
     runs-on: ubuntu-latest
     steps:
+    - name: Generate file
+      uses: actions/checkout@v3
+
     - name: Setup helmfile
       uses: mamezou-tech/setup-helmfile@v1.0.0
       with:
         helmfile-version: "v0.145.4"
-    - name: Generate file
-      uses: actions/checkout@v3
-    - run: |
+
+    - uses: oleksiyrudenko/gha-git-credentials@v2.1.1
+      with:
+        global: true
+        name: 'github-actions'
+        email: 'github-actions@github.com'
+        actor: 'github-actions'
+        token: '${{ secrets.GH_TOKEN }}'
+
+    - name: Push
+      run: |
         helmfile template --file helmfile/helmfile.yaml > helmfile/cert-manager/cert-manager.yaml
-        git config user.name github-actions
-        git config user.email github-actions@github.com
         git add .
         git commit -m "[bot]: auto generate manifest for new version"
         git push
