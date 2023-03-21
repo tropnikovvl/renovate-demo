@@ -7,15 +7,24 @@
   "branchConcurrentLimit": 0,
   "prHourlyLimit": 0,
   "prConcurrentLimit": 0,
-  "enabledManagers": [
-    "helmfile"
-  ],
   "labels": ["renovate"],
   "packageRules": [
     {
       "managers": ["helmfile"],
       "additionalBranchPrefix": "{{baseDir}}-",
       "commitMessageSuffix": ": {{baseDir}}"
+    },
+    {
+      "packageNames": ["Earthfile"],
+      "groupName": "Earthfile",
+      "matchPaths": ["**/Earthfile"]
     }
-  ]
+  ],
+  "docker": {
+    "fileMatch": [
+      "(^|/)Earthfile$",
+      "(^|/|\\.)Dockerfile$",
+      "(^|/)Dockerfile[^/]*$"
+    ]
+  }
 }
