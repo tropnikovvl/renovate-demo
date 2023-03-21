@@ -26,14 +26,5 @@
       "(^|/|\\.)Dockerfile$",
       "(^|/)Dockerfile[^/]*$"
     ]
-  },
-  "terraform": {
-    "fileMatch": [
-      "**/terragrunt.hcl",
-      "**/*.tf"
-    ],
-    "generate": {
-      "enabled": true
-    }
   }
 }
