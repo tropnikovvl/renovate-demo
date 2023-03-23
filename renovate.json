@@ -26,5 +26,8 @@
       "(^|/|\\.)Dockerfile$",
       "(^|/)Dockerfile[^/]*$"
     ]
+  },
+  "pre-commit": {
+    "enabled": true
   }
 }
