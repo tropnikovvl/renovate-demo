@@ -32,10 +32,3 @@ jobs:
         git add .
         git commit -m "[bot]: auto generate manifest for new version"
         git push https://${GH_TOKEN}@github.com/${GITHUB_REPOSITORY}.git
-
-    # - name: Push changes
-    #   uses: ad-m/github-push-action@master
-    #   with:
-    #     github_token: ${{ secrets.GH_TOKEN }}
-    #     force: true
-    #     branch: ${{ github.head_ref }}
