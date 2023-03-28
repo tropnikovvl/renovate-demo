@@ -18,9 +18,11 @@ for file in helmfile_files:
         for helmfile in helmfile_docs:
             helm_releases = helmfile.get("releases", [])
             releases.extend([r for r in helm_releases if r.get("version") is not None])
+            print(releases)
 
             helm_repositories = helmfile.get("repositories", [])
             repositories.extend(helm_repositories)
+            print(repositories)
 
         for repo in repositories:
             name = repo.get("name")
