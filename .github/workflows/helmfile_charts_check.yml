@@ -14,6 +14,8 @@ jobs:
     steps:
     - name: Checkout Code
       uses: actions/checkout@v3
+      with:
+        fetch-depth: 0
 
     - uses: azure/setup-helm@v3
 
@@ -29,10 +31,4 @@ jobs:
         git config user.email github-actions@github.com
         git add .
         git commit -m "[bot]: auto generate manifest for new version"
-        # git push https://${GH_TOKEN}@github.com/${GITHUB_REPOSITORY}.git
-
-    - name: Push changes
-      uses: ad-m/github-push-action@master
-      with:
-        force: true
-        branch: ${{ github.ref }}
+        git push https://${GH_TOKEN}@github.com/${GITHUB_REPOSITORY}.git
