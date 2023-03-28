@@ -1,0 +1,31 @@
+name: Helmfile charts version check
+on:
+  push:
+    branches:
+      - 'renovate/*'
+    paths:
+      - '**/helmfile.yaml'
+
+jobs:
+  check:
+    name: helmfile_charts_check
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout Code
+      uses: actions/checkout@v3
+
+    - uses: azure/setup-helm@v3
+
+    - name: Run script
+      run: |
+        python3 .github/check_helm_values.py
+
+    - name: Commit changes
+      env:
+        GH_TOKEN: ${{ secrets.GH_TOKEN }}
+      run: |
+        git config user.name github-actions
+        git config user.email github-actions@github.com
+        git add .
+        git commit -m "[bot]: auto generate manifest for new version"
+        git push https://${GH_TOKEN}@github.com/${GITHUB_REPOSITORY}.git
