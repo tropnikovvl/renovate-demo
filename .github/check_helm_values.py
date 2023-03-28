@@ -3,7 +3,7 @@ from pathlib import Path
 
 import yaml
 
-changed_files = subprocess.check_output(["git", "diff", "--name-only", "master"]).decode().strip().split("\n")
+changed_files = subprocess.check_output(["git", "diff", "--name-only"]).decode().strip().split("\n")
 helmfile_files = [f for f in changed_files if f.endswith("helmfile.yaml")]
 dir = "helm-values"
 
@@ -18,9 +18,11 @@ for file in helmfile_files:
         for helmfile in helmfile_docs:
             helm_releases = helmfile.get("releases", [])
             releases.extend([r for r in helm_releases if r.get("version") is not None])
+            print(releases)
 
             helm_repositories = helmfile.get("repositories", [])
             repositories.extend(helm_repositories)
+            print(repositories)
 
         for repo in repositories:
             name = repo.get("name")
