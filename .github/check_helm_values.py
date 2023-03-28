@@ -3,7 +3,7 @@ from pathlib import Path
 
 import yaml
 
-changed_files = subprocess.check_output(["git", "diff", "master", "--name-only"]).decode().strip().split("\n")
+changed_files = subprocess.check_output(["git", "diff", "origin/master..HEAD", "--name-only"]).decode().strip().split("\n")
 helmfile_files = [f for f in changed_files if f.endswith("helmfile.yaml")]
 dir = "helm-values"
 
