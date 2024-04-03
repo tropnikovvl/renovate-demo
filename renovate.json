@@ -18,6 +18,11 @@
       "packageNames": ["Earthfile"],
       "groupName": "Earthfile",
       "matchPaths": ["**/Earthfile"]
+    },
+    {
+    "description": "Automerge non-major updates",
+    "matchUpdateTypes": ["minor", "patch"],
+    "automerge": true
     }
   ],
   "docker": {
