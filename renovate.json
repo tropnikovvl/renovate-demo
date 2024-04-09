@@ -1,8 +1,6 @@
 {
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
-  "extends": [
-    "config:base"
-  ],
+  "extends": ["config:recommended"],
   "dependencyDashboard": true,
   "branchConcurrentLimit": 0,
   "prHourlyLimit": 0,
@@ -25,7 +23,7 @@
     "automerge": true
     }
   ],
-  "docker": {
+  "dockerfile": {
     "fileMatch": [
       "(^|/)Earthfile$",
       "(^|/|\\.)Dockerfile$",
