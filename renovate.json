@@ -32,5 +32,8 @@
   },
   "pre-commit": {
     "enabled": true
+  },
+  "flux": {
+    "fileMatch": ["flux/.+\\.yaml$"]
   }
 }
