@@ -33,6 +33,10 @@
   "pre-commit": {
     "enabled": true
   },
+
+  "helm-values": {
+    "fileMatch": ["./.+\\.yaml$"]
+  },
   "flux": {
     "fileMatch": ["./.+\\.yaml$"]
   },
