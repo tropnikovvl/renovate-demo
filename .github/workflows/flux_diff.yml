@@ -91,6 +91,7 @@ jobs:
           message-failure: Diff was not successful
           message: |
             ```diff
+            Diff 1
             ${{ steps.diff.outputs.diff }}
             ```
 

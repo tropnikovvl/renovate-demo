@@ -1,0 +1,30 @@
+---
+name: "Flux Test"
+
+on:
+  pull_request:
+    branches: ["master"]
+    paths: ["flux/**"]
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.event.number || github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  flux-test:
+    name: Flux Test
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Default Branch
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Setup Flux CLI
+        uses: fluxcd/flux2/action@v2.2.2
+
+      - uses: allenporter/flux-local/action/test@4.3.1
+        with:
+          path: flux/clusters/prod
+          enable-helm: true
+          enable-kyverno: false

@@ -32,13 +32,13 @@
     "fileMatch": ["./.+\\.yaml$"]
   },
   "flux": {
-    "fileMatch": ["./.+\\.yaml$"]
+    "fileMatch": ["flux/.+\\.ya?ml$"]
   },
   "regexManagers": [
     {
       "fileMatch": [
-        "flux-infra/.+\\.ya?ml$",
-        "flux-apps/.+\\.ya?ml$"
+        "flux/.+\\.ya?ml$",
+        "flux/.+\\.ya?ml$"
       ],
       "matchStrings": [
         "registryUrl=(?<registryUrl>.*?)\n *chart: (?<depName>.*?)\n *version: (?<currentValue>.*)\n"
