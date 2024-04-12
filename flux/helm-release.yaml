@@ -6,7 +6,7 @@ metadata:
 spec:
   chart:
     spec:
-      # renovate: datasource=github-releases depName=prometheus-operator/prometheus-operator
+      # renovate: datasource=github-releases depName=prometheus-community/prometheus-operator-crds
       chart: prometheus-operator-crds
       version: '10.0.0'
       sourceRef:
