@@ -43,11 +43,7 @@
     {
       "customType": "regex",
       "description": ["Process custom dependencies"],
-      "fileMatch": [
-        "(^|/).taskfiles/.+\\.ya?ml(?:\\.j2)?$",
-        "(^|/)ansible/.+\\.ya?ml(?:\\.j2)?$",
-        "(^|/)kubernetes/.+\\.ya?ml(?:\\.j2)?$"
-      ],
+      "fileMatch": ["./.+\\.yaml$"],
       "matchStrings": [
         "datasource=(?<datasource>\\S+) depName=(?<depName>\\S+)( repository=(?<registryUrl>\\S+))?\\n.+: (&\\S+\\s)?(?<currentValue>\\S+)",
         "datasource=(?<datasource>\\S+) depName=(?<depName>\\S+)\\n.+/(?<currentValue>(v|\\d)[^/]+)"
