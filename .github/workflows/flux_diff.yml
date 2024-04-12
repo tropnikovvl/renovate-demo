@@ -4,7 +4,7 @@ name: "Flux Diff"
 on:
   pull_request:
     branches: ["master"]
-    paths: ["flux-*/**"]
+    paths: ["flux/**"]
 
 concurrency:
   group: ${{ github.workflow }}-${{ github.event.number || github.ref }}
