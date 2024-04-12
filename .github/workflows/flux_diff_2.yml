@@ -17,7 +17,7 @@ jobs:
     strategy:
       matrix:
         cluster_path:
-          - clusters/prod
+          - flux/clusters/prod
         resource:
           - helmrelease
           - kustomization
