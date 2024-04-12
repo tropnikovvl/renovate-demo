@@ -42,7 +42,8 @@
   "regexManagers": [
     {
       "fileMatch": [
-        "flux/.+\\.ya?ml$"
+        "flux-infra/.+\\.ya?ml$",
+        "flux-apps/.+\\.ya?ml$"
       ],
       "matchStrings": [
         "registryUrl=(?<registryUrl>.*?)\n *chart: (?<depName>.*?)\n *version: (?<currentValue>.*)\n"
