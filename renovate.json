@@ -38,5 +38,16 @@
   },
   "flux": {
     "fileMatch": ["./.+\\.yaml$"]
-  }
+  },
+  "regexManagers": [
+    {
+      "fileMatch": [
+        "flux/.+\\.ya?ml$"
+      ],
+      "matchStrings": [
+        "registryUrl=(?<registryUrl>.*?)\n *chart: (?<depName>.*?)\n *version: (?<currentValue>.*)\n"
+      ],
+      "datasourceTemplate": "helm"
+    }
+  ]
 }
