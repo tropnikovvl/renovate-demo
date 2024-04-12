@@ -19,3 +19,13 @@ spec:
   interval: 5m
   type: oci
   url: oci://ghcr.io/stefanprodan/charts
+---
+apiVersion: source.toolkit.fluxcd.io/v1beta2
+kind: HelmRepository
+metadata:
+  name: prometheus-community
+  namespace: flux-system
+spec:
+  interval: 3h
+  url: https://prometheus-community.github.io/helm-charts
+  timeout: 3m
