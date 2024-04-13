@@ -4,4 +4,4 @@ kind: Kustomization
 resources:
   - external-dns.yaml
   - prom.yaml
-  - https://raw.githubusercontent.com/cert-manager/cert-manager/v1.13.5/deploy/crds/crd-certificaterequests.yaml
+  - https://raw.githubusercontent.com/cert-manager/cert-manager/v1.14.4/deploy/crds/crd-certificaterequests.yaml
