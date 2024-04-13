@@ -31,6 +31,7 @@ jobs:
           live-branch: master
           path: ${{ matrix.cluster_path }}
           resource: ${{ matrix.resource }}
+          debug: true
 
       - name: PR Comments
         uses: mshick/add-pr-comment@v2
