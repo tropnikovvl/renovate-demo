@@ -24,6 +24,6 @@ jobs:
       - name: List All Changed Clusters
         id: changed-clusters
         run: |
-          directories=$(find ./kubernetes -mindepth 1 -maxdepth 1 -type d | sed 's/^\.\///' | jq -R . | jq -s .)
+          directories=$(find ./flux/clusters -mindepth 1 -maxdepth 1 -type d | sed 's/^\.\///' | jq -R . | jq -s .)
           echo $directories
           echo "directories=$directories" >> $GITHUB_OUTPUT
