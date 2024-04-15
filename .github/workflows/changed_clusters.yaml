@@ -3,7 +3,7 @@ name: Changed Clusters
 
 on:
   pull_request:
-    branches: ["renovate/*"]
+    branches: ["master"]
 
 concurrency:
   group: ${{ github.workflow }}-${{ github.event.number || github.ref }}
@@ -14,7 +14,7 @@ jobs:
     name: Changed Clusters
     runs-on: ubuntu-latest
     outputs:
-      matrix: ${{ steps.changed-clusters.outputs.all_changed_and_modified_files }}
+      matrix: ${{ steps.changed-clusters.outputs.directories }}
     steps:
       - name: Checkout Default Branch
         uses: actions/checkout@v4
@@ -25,4 +25,5 @@ jobs:
         id: changed-clusters
         run: |
           directories=$(find ./kubernetes -mindepth 1 -maxdepth 1 -type d | sed 's/^\.\///' | jq -R . | jq -s .)
-          echo "${{ steps.changed-clusters.outputs.all_changed_and_modified_files }}"
+          echo $directories
+          echo "directories=$directories" >> $GITHUB_OUTPUT
