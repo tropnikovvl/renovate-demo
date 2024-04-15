@@ -1,0 +1,29 @@
+---
+name: Changed Clusters
+
+on:
+  pull_request:
+    branches: ["master"]
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.event.number || github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  changed-clusters:
+    name: Changed Clusters
+    runs-on: ubuntu-latest
+    outputs:
+      matrix: ${{ steps.changed-clusters.outputs.directories }}
+    steps:
+      - name: Checkout Default Branch
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: List All Changed Clusters
+        id: changed-clusters
+        run: |
+          directories=$(find ./flux/clusters -mindepth 1 -maxdepth 1 -type d | sed 's/^\.\///' | jq -R . | jq -s .)
+          echo $directories
+          echo "directories=$directories" >> $GITHUB_OUTPUT
