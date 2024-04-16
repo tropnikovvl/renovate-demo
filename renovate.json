@@ -66,7 +66,7 @@
       "description": "Regular GitHub URL Regex manager",
       "fileMatch": [".+\\.yaml$"],
       "matchStrings": [
-        "https:\\/\\/github.com\\/(?<depName>[\\w\\d\\-_]+\\/[\\w\\d\\-_]+)\\/(?<currentValue>[\\w\\d\\.\\-_]+)\\/.*"
+        "https:\\/\\/github.com\\/(?<depName>[\\w\\d\\-_]+\\/[\\w\\d\\-_]+)\\/releases/download/(?<currentValue>[\\w\\d\\.\\-_]+)\\/.*"
       ],
       "datasourceTemplate": "github-releases",
       "versioningTemplate": "semver"
