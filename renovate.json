@@ -16,6 +16,13 @@
       "packageNames": ["Earthfile"],
       "groupName": "Earthfile",
       "matchPaths": ["**/Earthfile"]
+    },
+    {
+      "groupName": "test-group",
+      "matchPackageNames": [
+          "external-dns",
+          "external-secrets/external-secrets"
+      ]
     }
   ],
   "dockerfile": {
