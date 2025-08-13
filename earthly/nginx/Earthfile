@@ -1,6 +1,6 @@
 VERSION 0.7
 
 image:
-    FROM nginx:1.25.4
+    FROM nginx:1.29.1
 
     SAVE IMAGE --cache-hint
