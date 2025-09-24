@@ -3,5 +3,5 @@
 # renovate: datasource=github-releases depName=helm/helm
 HELM_VERSION="v3.17.3"
 
-# renovate: datasource=github-releases depName=terraform/terraform versioning=hashicorp
-TERRAFORM_VERSION="1.12.2"
+# renovate: datasource=github-releases depName=terraform/terraform
+TERRAFORM_VERSION="v1.12.2"
