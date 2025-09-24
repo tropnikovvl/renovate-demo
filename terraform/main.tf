@@ -8,7 +8,7 @@ locals {
         <<-EOT
         initContainers:
           - name: velero-plugin-for-aws
-            image: velero/velero-plugin-for-aws:v1.12.1
+            image: velero/velero-plugin-for-aws:v1.13.0
             imagePullPolicy: IfNotPresent
             volumeMounts:
               - mountPath: /target
