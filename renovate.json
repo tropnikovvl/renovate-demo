@@ -70,6 +70,13 @@
       ],
       "datasourceTemplate": "github-releases",
       "versioningTemplate": "semver"
+    },
+    {
+      "fileMatch": ["\\.tf$", "\\.tfvars$"],
+      "matchStrings": [
+        "# renovate: datasource=(?<datasource>[a-z-]+) depName=(?<depName>[^\\s]+)\\s+image: (?<depName>[^:]+):v?(?<currentValue>[\\d.]+)"
+      ],
+      "versioningTemplate": "semver"
     }
   ]
 }
