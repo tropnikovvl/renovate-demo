@@ -72,11 +72,12 @@
       "versioningTemplate": "semver"
     },
     {
-      "fileMatch": ["\\.tf$", "\\.tfvars$"],
+      "fileMatch": ["**/*.tf"],
       "matchStrings": [
-        "# renovate: datasource=(?<datasource>[a-z-]+) depName=(?<depName>[^\\s]+)\\s+image: (?<depName>[^:]+):v?(?<currentValue>[\\d.]+)"
+        "image: (?<depName>[a-zA-Z0-9-_./]+):(?<currentValue>v?[\\d.]+[a-zA-Z0-9-_]*)"
       ],
-      "versioningTemplate": "semver"
-    }
+      "datasourceTemplate": "docker",
+      "versioningTemplate": "docker"
+    },
   ]
 }
