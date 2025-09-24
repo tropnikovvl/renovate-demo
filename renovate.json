@@ -78,6 +78,6 @@
       ],
       "datasourceTemplate": "docker",
       "versioningTemplate": "docker"
-    },
+    }
   ]
 }
