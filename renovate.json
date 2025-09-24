@@ -72,7 +72,7 @@
       "versioningTemplate": "semver"
     },
     {
-      "fileMatch": ["**/*.tf"],
+      "fileMatch": [".+\\.tf$"],
       "matchStrings": [
         "image: (?<depName>[a-zA-Z0-9-_./]+):(?<currentValue>v?[\\d.]+[a-zA-Z0-9-_]*)"
       ],
