@@ -8,8 +8,7 @@ locals {
         <<-EOT
         initContainers:
           - name: velero-plugin-for-aws
-            # renovate: datasource=github-releases depName=velero/velero-plugin-for-aws
-            image: velero/velero-plugin-for-aws:v1.12.1
+            image: velero/velero-plugin-for-aws:v1.12.1 # renovate: datasource=github-releases depName=velero/velero-plugin-for-aws
             imagePullPolicy: IfNotPresent
             volumeMounts:
               - mountPath: /target
